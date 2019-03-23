@@ -1,0 +1,18 @@
+{
+  "name": "demo1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "docker build -t 1520006273/yanxuan-node-demo:v1 . && docker push 1520006273/yanxuan-node-demo:v1",
+    "start": "kubectl create -f ./service.yaml --save-config",
+    "apply": "kubectl apply -f ./service.yaml",
+    "delete": "kubectl delete -f ./service.yaml"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.7.0"
+  }
+}

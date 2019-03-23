@@ -1,0 +1,23 @@
+apiVersion: serving.knative.dev/v1alpha1
+kind: Service
+metadata:
+  name: demo01
+  namespace: default
+spec:
+  runLatest:
+    configuration:
+      build:
+        serviceAccountName: build-bot
+        source:
+          git:
+            url: https://github.com/gswk/knative-helloworld.git
+            revision: master
+        template:
+          name: kaniko
+          arguments:
+          - name: IMAGE
+            value: 1520006273/yanxuan-node-demo:v1
+      revisionTemplate:
+        spec:
+          container:
+            image: 1520006273/yanxuan-node-demo:v1
