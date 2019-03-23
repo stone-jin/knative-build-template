@@ -13,11 +13,11 @@ spec:
             url: https://github.com/stone-jin/knative-build-template.git
             revision: master
         template:
-          name: kaniko
+          name: buildpacks-cnb
           arguments:
           - name: IMAGE
-            value: 1520006273/yanxuan-node-demo:v1
+            value: 1520006273/node-demo:v1
       revisionTemplate:
         spec:
           container:
-            image: 1520006273/yanxuan-node-demo:v1
+            image: 1520006273/node-demo:v1
